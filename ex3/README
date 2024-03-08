@@ -1,0 +1,11 @@
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=password -d -p 3306:3306 mysql:latest
+docker exec -it mysql-container bash
+mysql -uroot -ppassword
+CREATE DATABASE company;
+docker cp company.sql mysql-container:/company.sql
+docker exec -it mysql-container bash
+mysql -uroot -p company < /company.sql
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON company.* TO 'username'@'localhost';
+FLUSH PRIVILEGES;
+SELECT department, AVG(salary) AS average_salary FROM employees GROUP BY department;

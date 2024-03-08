@@ -1,0 +1,6 @@
+https://hub.docker.com/repository/docker/mihneadrg/exercitiu/general
+
+Am instalat imaginea Docker pentru Java.
+Am incarcat fisierul Main.java in visual studio.
+Am creat imaginea Docker cu numele image2.
+Am creat un repository in Docker Hub in care am introdus imaginea prin comanda docker push.
